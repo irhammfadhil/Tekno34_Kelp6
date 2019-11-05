@@ -62,9 +62,9 @@ class TestimonialController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product)
+    public function edit(Testimonial $testimonial)
     {
-        //
+        return view('testimonial.edit', compact('testimonial'));
     }
 
     /**
