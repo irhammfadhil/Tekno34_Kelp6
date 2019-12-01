@@ -22,11 +22,12 @@
              <thead>
               <tr>
                 <th>No</th>
-                <th>NIK</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Phone Number</th>
-                <th>Profile</th>
+                <th>Tanggal dan jam mulai</th>
+                <th>Tanggal dan jam selesai</th>
+                <th>Lokasi</th>
+                <th>Kontak</th>
+                <th>Fotografer</th>
+                <th>Biaya</th>
                 <th>Action</th>
               </tr>
             </thead>
@@ -36,16 +37,17 @@
               foreach ($list_user->data as $user) { ?>
                 <tr>
                   <td></td>
-                  <td><?php echo $user->user_nik ?></td>
-                  <td><?php echo $user->user_name ?></td>
-                  <td><?php echo $user->user_email ?></td>
-                  <td><?php echo $user->user_phone ?></td>
-                  <td><?php echo $user->profile_name ?></td>
+                  <td> tgljammulai </td>
+                  <td> tgljamselesai </td>
+                  <td> location </td>
+                  <td> contact </td>
+                  <td> photograph </td>
+                  <td> cost </td>
                   <td>
                     <div class="dropdown">
                       <button class="btn btn-link" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-ellipsis-h"></i></button>
                       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                       <a href="<?php echo base_url() . "dataMaster/editUser/" . $user->id_user; ?>"> <button class="dropdown-item" onclick=""><i class="fa fa-pencil"></i>&nbsp;Edit</button></a>
+                       <a href="<?php echo base_url() . "dataMaster/editUser/" . $user->id_user; ?>"> <button class="dropdown-item" onclick=""><i class="fa fa-pencil"></i>&nbsp;Confirm booking</button></a>
                        <a href="#" data-toggle="modal" data-target="#modal_delete" data-id_user="<?php echo $user->id_user ?>"><button class="dropdown-item"><i class="fa fa-trash"></i>&nbsp;Delete</button>
                        </a>
                      </div>

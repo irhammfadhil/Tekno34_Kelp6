@@ -1,7 +1,7 @@
     <div class="container mt-4">
     	<div class="card">
     		<div class="card-body">
-    			<h4 class="text-body pb-4">Customers List</h4>
+    			<h4 class="text-body pb-4">Photographers List</h4>
          <?php if($this->session->flashdata('success')!=NULL){?>
           <div class="alert alert-danger" role="alert" id="success-alert" style="display: none;"><b><?php echo $this->session->flashdata('success');?></b></div>
           <script type="text/javascript">
@@ -22,9 +22,11 @@
            <thead>
             <tr>
               <th>No</th>
-              <th>Name</th>
+              <th>Nama</th>
               <th>Email</th>
-              <th>Phone Number</th>
+              <th>Nomor Telepon</th>
+              <th>Alamat</th>
+              <th>Tarif</th>
               <th>Action</th>
             </tr>
           </thead>
@@ -37,10 +39,13 @@
                 <td><?php echo $cust->customer_name ?></td>
                 <td><?php echo $cust->customer_email ?></td>
                 <td><?php echo $cust->customer_phone ?></td>
+                <td> address </td>
+                <td> fare </td>
                 <td>
                   <div class="dropdown">
                     <button class="btn btn-link" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-ellipsis-h"></i></button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                     <a href="<?php echo base_url() . "dataMaster/editCustomer/" . $cust->id_customer; ?>"> <button class="dropdown-item" onclick=""><i class="fa fa-pencil"></i>&nbsp;Book this photographer</button></a>
                      <a href="<?php echo base_url() . "dataMaster/editCustomer/" . $cust->id_customer; ?>"> <button class="dropdown-item" onclick=""><i class="fa fa-pencil"></i>&nbsp;Edit</button></a>
                      <a href="#" data-toggle="modal" data-target="#modal_delete" data-id_customer="<?php echo $cust->id_customer ?>"><button class="dropdown-item"><i class="fa fa-trash"></i>&nbsp;Delete</button>
                      </a>
